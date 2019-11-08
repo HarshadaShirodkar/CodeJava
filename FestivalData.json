@@ -1,0 +1,32 @@
+{
+  "musicFestival": [
+  {
+    "recordLabelname": "Record Label 1",
+    "bands": [
+      {
+        "name": "Band X",
+        "bandName": ["Beta Festival",
+                        "Omega2 Festival",
+						"Alpha Festival"
+						]
+      }
+    ]
+    
+    
+  },
+  
+  {
+  "recordLabelname": "Record Label 2 ",
+    "bands": [
+      {
+        "name": "Band A",
+        "bandName": ["Gamma Festival",
+						"Aplha Festival",
+						"Omega1 Festival"
+		
+		]
+      }
+    ]
+  }
+  ]
+}
