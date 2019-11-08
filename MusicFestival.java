@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,10 +14,10 @@ import org.json.simple.parser.ParseException;
 
 public class MusicFestival {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws Exception {
 		   JSONParser jsonPaser = new JSONParser();
         try {
-		//This code for getting the json from the url but commented below section *********
+        	//This code for getting the json from the url but commented below section *********
 		
 		/*
 			 * String inline= ""; URL url = new URL("URL"); HttpURLConnection conn =
@@ -29,9 +30,14 @@ public class MusicFestival {
 			 * while(sc.hasNext()) { inline+=sc.nextLine(); } System.out.println(inline);
 			 * sc.close(); } JSONObject jobj = (JSONObject)jsonPaser.parse(inline);
 			 */
-        	 if(new File("src/FestivalData.json").length()> 0 
-        			&& new File("src/FestivalData.json").exists()) { 
-        	Object obj = jsonPaser.parse(new FileReader("src/FestivalData.json"));
+		
+		
+        	if(new File("src/FestivalData.json").length()> 0 
+        			&& new File("src/FestivalData.json").exists()) {        	
+        		
+        		Object obj = jsonPaser.parse(new FileReader("src/FestivalData.json"));
+        	if(obj != null && !obj.equals(null)) {
+        	
         	
         	 JSONObject jsonObject= (JSONObject) obj;
         	 JSONArray musicFestArr=  (JSONArray) jsonObject.get("musicFestival");
@@ -39,10 +45,8 @@ public class MusicFestival {
 			  List<JSONObject> list = new ArrayList<JSONObject>(); 
 			  HashMap<Integer, String> sortedMap = new HashMap<Integer, String>();
 			  if(!musicFestArr.isEmpty()) {
-			  list.add((JSONObject) musicFestArr.get(0));
 			  
 			  
-			 
 			  for (int i = 0; i < musicFestArr.size(); i++) {
 				  JSONObject JSONObject = (org.json.simple.JSONObject) musicFestArr.get(i);
 				  String recordLabelname = (String) JSONObject.get("recordLabelname");
@@ -71,25 +75,21 @@ public class MusicFestival {
 						  sortedMap.put(k+2, str1.get(k)+"\n");;
 						  
 					  }
-
-					
-					  
 					  List<String> targetList = new ArrayList<>(sortedMap.values());
-					  
 					  System.out.println(targetList);
 					  }
-				  }
-					  
-					  
 				  }
 				  }
 				}
 			  }
-			  
+        	}
         }
+        	}
             catch (FileNotFoundException e) {
-	            e.printStackTrace();
+            	e.printStackTrace();
 	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }catch (ParseException e) {
 	            e.printStackTrace();
 	        }
 	}
@@ -98,6 +98,3 @@ public class MusicFestival {
 	
 	
 }
-
-
-
