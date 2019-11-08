@@ -29,7 +29,8 @@ public class MusicFestival {
 			 * while(sc.hasNext()) { inline+=sc.nextLine(); } System.out.println(inline);
 			 * sc.close(); } JSONObject jobj = (JSONObject)jsonPaser.parse(inline);
 			 */
-        	 
+        	 if(new File("src/FestivalData.json").length()> 0 
+        			&& new File("src/FestivalData.json").exists()) { 
         	Object obj = jsonPaser.parse(new FileReader("src/FestivalData.json"));
         	
         	 JSONObject jsonObject= (JSONObject) obj;
@@ -77,6 +78,7 @@ public class MusicFestival {
 					  
 					  System.out.println(targetList);
 					  }
+				  }
 					  
 					  
 				  }
