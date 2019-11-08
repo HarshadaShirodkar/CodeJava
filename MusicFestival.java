@@ -16,7 +16,7 @@ public class MusicFestival {
 	public static void main(String[] args) throws ParseException {
 		   JSONParser jsonPaser = new JSONParser();
         try {
-        	Object obj = jsonPaser.parse(new FileReader("c:\\AccountsV2.json"));
+        	Object obj = jsonPaser.parse(new FileReader("src/AccountsV2.json"));
         	
         	 JSONObject jsonObject= (JSONObject) obj;
         	 JSONArray musicFestArr=  (JSONArray) jsonObject.get("musicFestival");
