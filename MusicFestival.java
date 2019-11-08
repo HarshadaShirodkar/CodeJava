@@ -16,6 +16,20 @@ public class MusicFestival {
 	public static void main(String[] args) throws ParseException {
 		   JSONParser jsonPaser = new JSONParser();
         try {
+		//This code for getting the json from the url but commented below section *********
+		
+		/*
+			 * String inline= ""; URL url = new URL("URL"); HttpURLConnection conn =
+			 * (HttpURLConnection)url.openConnection(); conn.setRequestMethod("GET");
+			 * conn.connect(); int responsecode = conn.getResponseCode();
+			 * 
+			 * 
+			 * if(responsecode == 200) { Scanner sc = new Scanner(url.openStream());
+			 * 
+			 * while(sc.hasNext()) { inline+=sc.nextLine(); } System.out.println(inline);
+			 * sc.close(); } JSONObject jobj = (JSONObject)jsonPaser.parse(inline);
+			 */
+        	 
         	Object obj = jsonPaser.parse(new FileReader("src/FestivalData.json"));
         	
         	 JSONObject jsonObject= (JSONObject) obj;
