@@ -1,0 +1,13 @@
+[Record Label 1
+, Band X
+, Alpha Festival
+, Beta Festival
+, Omega2 Festival
+]
+[Record Label 2 
+, Band A
+, Aplha Festival
+, Beta Festival
+, Gamma Festival
+, Omega1 Festival
+]
